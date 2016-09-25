@@ -1,10 +1,15 @@
-todo web app
+Sin jquery es muy simple usar form/get, pero al hacer "button/submit" no se puede 
+permanecer en la misma pagina.
 
-1. usa mysql bd "uno" y tabla "todo" creada manualmente - psw hola
-create table todo
-(id int not null auto_increment primary key,asunto varchar(80),deleted bool default false);
+Con jquery si se puede permanecer en la misma pagina, pero:
+a) se debe usar "post" 
+b) no usar <form></form>
+c) 2nd parameter de $.post no debe ser opcional, debe llevar campos del formulario en json.
+d) para procesar "post" en node se necesita usar, npm body-parser
+y poder tener acceso a los campos del formulario con la sig instruccion: 
+var miVar = req.body.formField;
 
-2. express - static route en "localhost:3000" devuelve "default.htm"
 
-3. front end: al capturar el campo de texto "asunto" y presionar boton "submit",
-graba en la tabla un registro nuevo.
+BIBLIOGRAFIA
+goo: jquery body-parser
+https://codeforgeek.com/2014/09/handle-get-post-request-express-4/
