@@ -1,8 +1,22 @@
 <html>
+  <head>
+    <title>Simple login</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+    <script>
+      $(document).ready(function(){
+        $("#miBoton").click(function(){
+          jAsunto = $("#asunto").val();
+          $.post("http://localhost/create", {asunto: jAsunto}, function(data){
+
+          });
+  		$("#asunto").val("");
+		$("#asunto").focus();
+        });
+      });
+    </script>
+  </head>
 <body>
-	<form action="/create">
-		Asunto: <input type="text" name="asunto">  
-		<input type="submit" value="Submit">
-	</form>
+		Asunto: <input type="text" id="asunto">  
+		<input type="submit" id="miBoton" value="Submit">
 </body>
 </html>
