@@ -4,24 +4,17 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
     <script>
       $(document).ready(function(){
-        var user,pass;
-        $("#submit").click(function(){
-          user=$("#user").val();
-          pass=$("#password").val();
-          $.post("http://localhost/login",{user: user,password: pass}, function(data){
-            if(data==='done')
-              {
-                alert("login success");
-              }
+        $("#miBoton").click(function(){
+          jAsunto = $("#asunto").val();
+          $.post("http://localhost/create", {asunto: jAsunto}, function(data){
+                alert(data);
           });
         });
       });
     </script>
   </head>
   <body>
-    <h1>Hello people !</h1>
-    <input type="TEXT" id="user" size="40"><br>
-    <input type="password" id="password" size="40"><br>
-    <input type="button" id="submit" value="Submit">
+    <input type="TEXT" id="asunto" size="40"><br>
+    <input type="button" id="miBoton" value="Grabar">
   </body>
 </html>

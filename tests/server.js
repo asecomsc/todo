@@ -5,15 +5,14 @@ var app            =         express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-app.get('/',function(req,res){
+app.get('/', function(req,res){
   res.sendfile("index.html");
 });
-app.post('/login',function(req,res){
-  var user_name=req.body.user;
-  var password=req.body.password;
-  console.log("User name = "+user_name+"   password = "+password);
-  res.end("done");
+app.post('/create', function(req,res){
+  nAsunto = req.body.asunto;
+  console.log("Asunto = " + nAsunto);
+  res.end("done..");
 });
 app.listen(80,function(){
-  console.log("Started on LOCALHOST");
+  console.log("Started on PORT 80");
 });
